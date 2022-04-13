@@ -23,53 +23,45 @@ If you use our code for research, please cite our paper:
 }
 ```
 
-<!-- ## Setup
+## Setup
 
-Pre-prequisites
 
-        Python == 3.6
-        TensorFlow == 1.12
-        numpy-quaternion
+        docker pull tensorflow/tensorflow:1.15.0-gpu-py3
+        docker run -it --runtime=nvidia -v /path/to/semi_supervised_3d_segmentation/SemiSemanticNet/:/workspace tensorflow/tensorflow:1.15.0-gpu-py3
+        cd /workspace
+        pip install tqdm scipy --user
 
-Compile customized TensorFlow operators
-
-        $ cd cext
-        $ mkdir build
-        $ cd build
-        $ cmake ..
-        $ make
 
 ## Experiments
 
 
 ### Data Preparation
 
-Now we provide the Google drive link for downloading the training datasets:
+We provide the Google drive link for downloading the training and test datasets:
 
->[Training data](https://drive.google.com/drive/folders/1Uh_-CrOyUVpB5mWkSOY-L-b2kpa9LuTC?usp=sharing)
+>[Training data](https://drive.google.com/drive/folders)
 
 ### Training
 
 To start the training, run
 
-        $ python training_script.py --category class_name
+        $ python SemanticPrimitiveNetSegPartnet.py --logdir log/test_chair --train_data data/PartNet/Chair_ratio02_90_un4489_8978.tfrecords --test_data data/PartNet/Chair_level123_test_1217.tfrecords --test_data_visual data/PartNet/Chair_level123_test_1217.tfrecords --train_batch_size 16 --max_iter 80000 --test_every_iter 5000 --test_iter 1217 --cache_folder test_chair --gpu 0 --n_part_1 6 --n_part_2 30  --n_part_3 39 --phase train --seg_loss_weight 1 --point_consistency_weight 0.01 --part_consistency_weight 0.01 --hierarchy_point_consistency_weight 0.01 --level_1_weight 1 --level_2_weight 1 --level_3_weight 1 --level_32_weight 1 --level_21_weight 1 --learning_rate 0.1 --optimizer sgd --ckpt log/test_chair/model --delete_0 --category Chair 
 
 ### Test
 
 To test a trained model, run
 
-        $ python iterative_training.py --test_data test_tfrecords --test_iter number_of_shapes --ckpt /path/to/snapshots --cache_folder /path/to/save/test_results --test
+        $ python SemanticPrimitiveNetSegPartnet.py --logdir log/test_chair --train_data data/PartNet/Chair_ratio02_90_un4489_8978.tfrecords --test_data data/PartNet/Chair_level123_test_1217.tfrecords --test_data_visual data/PartNet/Chair_level123_test_1217.tfrecords --train_batch_size 16 --max_iter 80000 --test_every_iter 5000 --test_iter 1217 --cache_folder test_chair --gpu 0 --n_part_1 6 --n_part_2 30  --n_part_3 39 --phase test --seg_loss_weight 1 --point_consistency_weight 0.01 --part_consistency_weight 0.01 --hierarchy_point_consistency_weight 0.01 --level_1_weight 1 --level_2_weight 1 --level_3_weight 1 --level_32_weight 1 --level_21_weight 1 --learning_rate 0.1 --optimizer sgd --ckpt weight/PartNet/Chair/02 --delete_0 --category Chair
 
-Now we provide the trained weights and the final results used in our paper:
+We provide the trained weights used in our paper:
 
->[Weights](https://drive.google.com/drive/folders/1ipixLDU4LejE57R8dnLJFTvGvnkilfv_?usp=sharing)
+>[Weights](https://drive.google.com/drive/folders)
 
->[Results](https://drive.google.com/drive/folders/1e_qdJeFtNoPy8jtBKtpMoln-Cfrn8Jya?usp=sharing)
- 
+
 
 ## License
 
-MIT Licence -->
+MIT Licence
 
 ## Contact
 
