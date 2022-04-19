@@ -39,13 +39,15 @@ If you use our code for research, please cite our paper:
 
 We provide the Google drive link for downloading the training and test datasets:
 
->[Training data](https://drive.google.com/drive/folders)
+>[Training data (extract code: semi)](https://pan.baidu.com/s/1fIy5LvqkqW_Usr5yoDoMyg)
 
 ### Training
 
 To start the training, run
 
-        $ python SemanticPrimitiveNetSegPartnet.py --logdir log/test_chair --train_data data/PartNet/Chair_ratio02_90_un4489_8978.tfrecords --test_data data/PartNet/Chair_level123_test_1217.tfrecords --test_data_visual data/PartNet/Chair_level123_test_1217.tfrecords --train_batch_size 16 --max_iter 80000 --test_every_iter 5000 --test_iter 1217 --cache_folder test_chair --gpu 0 --n_part_1 6 --n_part_2 30  --n_part_3 39 --phase train --seg_loss_weight 1 --point_consistency_weight 0.01 --part_consistency_weight 0.01 --hierarchy_point_consistency_weight 0.01 --level_1_weight 1 --level_2_weight 1 --level_3_weight 1 --level_32_weight 1 --level_21_weight 1 --learning_rate 0.1 --optimizer sgd --ckpt log/test_chair/model --delete_0 --category Chair 
+        $ python SemanticPrimitiveNetSegPartnet.py --logdir log/test_chair --train_data data/PartNet/Chair_ratio02_90_un4489_8978.tfrecords --test_data data/PartNet/Chair_level123_test_1217.tfrecords --test_data_visual data/PartNet/Chair_level123_test_1217.tfrecords --train_batch_size 16 --max_iter 80000 --test_every_iter 5000 --test_iter 1217 --cache_folder test_chair --gpu 0 --n_part_1 6 --n_part_2 30  --n_part_3 39 --phase train --seg_loss_weight 1 --point_consistency_weight 0.01 --part_consistency_weight 0.01 --hierarchy_point_consistency_weight 0.01 --level_1_weight 1 --level_2_weight 1 --level_3_weight 1 --level_32_weight 1 --level_21_weight 1 --learning_rate 0.1 --optimizer sgd --delete_0 --category Chair 
+
+        $ python SemanticPrimitiveNetSegScannet.py --logdir log/test_scannet --train_data data/ScanNet/scannet_train_official_su_12_un_1201.tfrecords --test_data data/ScanNet/scannet_val_312.tfrecords --test_data_visual data/ScanNet/scannet_val_312.tfrecords --train_batch_size 4 --max_iter 60000 --test_every_iter 1000 --test_iter 312 --disp_every_n_steps 60000 --cache_folder test_scannet --gpu 0 --n_part 21 --n_part_1 7 --phase train --seg_loss_weight 1 --point_consistency_weight 0.005 --part_consistency_weight 0.005 --hierarchy_point_consistency_weight 0.005 --level_0_weight 1 --level_1_weight 1 --level_01_weight 1 --learning_rate 0.1 --optimizer sgd --delete_0 --category scene1 --depth 9 --test_shape_average_point_number 160000 --nempty
 
 ### Test
 
@@ -53,9 +55,11 @@ To test a trained model, run
 
         $ python SemanticPrimitiveNetSegPartnet.py --logdir log/test_chair --train_data data/PartNet/Chair_ratio02_90_un4489_8978.tfrecords --test_data data/PartNet/Chair_level123_test_1217.tfrecords --test_data_visual data/PartNet/Chair_level123_test_1217.tfrecords --train_batch_size 16 --max_iter 80000 --test_every_iter 5000 --test_iter 1217 --cache_folder test_chair --gpu 0 --n_part_1 6 --n_part_2 30  --n_part_3 39 --phase test --seg_loss_weight 1 --point_consistency_weight 0.01 --part_consistency_weight 0.01 --hierarchy_point_consistency_weight 0.01 --level_1_weight 1 --level_2_weight 1 --level_3_weight 1 --level_32_weight 1 --level_21_weight 1 --learning_rate 0.1 --optimizer sgd --ckpt weight/PartNet/Chair/02 --delete_0 --category Chair
 
+        $ python SemanticPrimitiveNetSegScannet.py --logdir log/test_scannet --train_data data/ScanNet/scannet_train_official_su_12_un_1201.tfrecords --test_data data/ScanNet/scannet_val_312.tfrecords --test_data_visual data/ScanNet/scannet_val_312.tfrecords --train_batch_size 4 --max_iter 60000 --test_every_iter 1000 --test_iter 312 --disp_every_n_steps 60000 --cache_folder test_scannet --gpu 0 --n_part 21 --n_part_1 7 --phase test --seg_loss_weight 1 --point_consistency_weight 0.005 --part_consistency_weight 0.005 --hierarchy_point_consistency_weight 0.005 --level_0_weight 1 --level_1_weight 1 --level_01_weight 1 --learning_rate 0.1 --optimizer sgd --ckpt weight/ScanNet/01 --delete_0 --category scene1 --depth 9 --test_shape_average_point_number 160000 --nempty
+
 We provide the trained weights used in our paper:
 
->[Weights](https://drive.google.com/drive/folders)
+>[Weights (extract code: semi)](https://pan.baidu.com/s/1BlzepfBJzKMV5VnmAbV_mA)
 
 
 
