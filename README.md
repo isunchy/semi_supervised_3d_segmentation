@@ -15,11 +15,12 @@ In this repository, we release the code and data for training the semi-supervise
 
 If you use our code for research, please cite our paper:
 ```
-@article{sun2022semisupervised,
+@article{sun2022semi,
   title     = {Semi-Supervised 3D Shape Segmentation with Multilevel Consistency and Part Substitution},
   author    = {Sun, Chunyu and Yang, Yiqi and Guo, Haoxiang and Wang, pengshuai and Tong, Xin and Liu, Yang and Shum Heung-Yeung},
   journal   = {Computational Visual Media},
-  year      = {2022}
+  year      = {2022},
+  publisher = {Springer}
 }
 ```
 
@@ -37,9 +38,11 @@ If you use our code for research, please cite our paper:
 
 ### Data Preparation
 
-We provide the Google drive link for downloading the training and test datasets:
+We provide the Baidu drive link for downloading the training and test datasets:
 
 >[Training data (extract code: semi)](https://pan.baidu.com/s/1fIy5LvqkqW_Usr5yoDoMyg)
+
+The codes for the part substitution algorithm are put in the folder "PartSubstitution", and you can use them to generate augmented shapes.
 
 ### Training
 
