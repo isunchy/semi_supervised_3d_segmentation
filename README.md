@@ -40,7 +40,7 @@ If you use our code for research, please cite our paper:
 
 We provide the Baidu drive link for downloading the training and test datasets:
 
->[Training data (extract code: semi)](https://pan.baidu.com/s/1fIy5LvqkqW_Usr5yoDoMyg)
+>[Training data](https://pan.baidu.com/s/1WAcI8cTYAcYsAuCQNupXfQ?pwd=semi)
 
 The codes for the part substitution algorithm are put in the folder "PartSubstitution", and you can use them to generate augmented shapes.
 
@@ -62,7 +62,7 @@ To test a trained model, run
 
 We provide the trained weights used in our paper:
 
->[Weights (extract code: semi)](https://pan.baidu.com/s/1BlzepfBJzKMV5VnmAbV_mA)
+>[Weights](https://pan.baidu.com/s/19cnwsKwd_DPSF0rT7t1rNA?pwd=semi)
 
 
 
